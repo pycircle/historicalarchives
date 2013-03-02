@@ -9,14 +9,14 @@ class Material(models.Model)
 	'''klasa dla materialow'''
 	owner = models.ForeignKey(User) # wlascicielem jest uzytkownik, 
 	uploader = models.IPAddressField(null = True)#jesli material jest dodawany anonimowo, zapisujemy IP jako tworce 
-	title = models.CharField(max_length = 150, unique = True, help_text = '')
-	date = models.DateTimeField(blank = True) # DateTimeField jest tymczasowe
+	title = models.CharField(max_length = 150, unique = True,)
+	date = models.DateTimeField(blank = True) # DateTimeField jest tymczasowe, poniewaz nie zawsze mozna podac pelna date, czasami tylko rok, albo nawet dekade, dlatego trzeba bedzie to jakos zastapic
 	place = models.ForeignKey(Location)
 	date_of_creation =  models.DateField.auto_now_add() #data powstania materialu czyli 'teraz' wypelniana automatycznie
 	type_of_media = #rodzaj medium: audio, video, plik graficzny, 
 	member_of_collections = models.ManyToManyField(Collection)#kazdy material moze nalezec do dowolnej ilosci kolekcji
 	description = models.TextField()#opis materialu podany przez uzytkownika
-	tags = models.TagField(help_text = '')
+	tags = models.TagField()
 	def add_to_collection(self, collection, user):
 		if  collection.owner != public and collection.owner != User:
 			print "Tylko wlasciciel kolekcji moze dodawac do niej nowe materia�y."
