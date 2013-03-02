@@ -19,7 +19,7 @@ class Material(models.Model)
 	tags = models.TagField(help_text = '')
 	def add_to_collection(self, collection, user):
 		if  collection.owner != public and collection.owner != User:
-			print "Tylko wlasciciel kolekcji moze dodawac do niej nowe materia³y."
+			print "Tylko wlasciciel kolekcji moze dodawac do niej nowe materiaï¿½y."
 		elif collection.owner == public or collection.owner == User:
 			self.member_of_collections.append(collection)
 			collection.materials_belonging.append(self)
@@ -32,9 +32,9 @@ class UploadMaterial(forms.Form)
 	file = forms.FileField()
 	def save(self):
 		new_material = models.Model.material(title = self.cleaned_data['title'],
-											description = self.cleaned_data['description']
-											date = self.cleaned_data['date']
-											place = self.cleand_data['place'])
+						description = self.cleaned_data['description']
+						date = self.cleaned_data['date']
+						place = self.cleand_data['place'])
 		return new_material
 	
 	
@@ -51,7 +51,7 @@ class Collection(models.Model)
 	date_of_creation =  models.DateField.auto_now_add() #data powstania materialu czyli 'teraz' wypelniana automatycznie
 	materials_belonging = models.ManyToManyField(Material)# materialy ktore naleza do kolekcji
 	def make_public(self):
-	'''zamienia kolekcje z prywatnej w publiczn¹'''
+	'''zamienia kolekcje z prywatnej w publicznï¿½'''
 		self.owner = ''
 
 
@@ -60,7 +60,7 @@ class request_for_materials(models.Model):
 	issuer = models.ForeignKey(User) #osoba ktora publikuje prosbe
 	title = models.CharField(max_length = 150, unique = True)
 	date_of_creation =  models.DateField.auto_now_add() #data powstania materialu czyli 'teraz' wypelniana automatycznie
-	description = models.TextField()#opis prosby o materia³y podany przez uzytkownika
+	description = models.TextField()#opis prosby o materiaï¿½y podany przez uzytkownika
 
 
 
