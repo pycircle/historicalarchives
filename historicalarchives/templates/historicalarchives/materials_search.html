@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Multiarchiwum - szukaj materialu{% endblock %}
+{% block content %}
+<div>
+<p>Przeszukaj materia³y</p>
+ 
+ 
+ <form class="searchform">
+	<input class="searchfield" type="text" value="Wpisz s³owo" onFocus="if (this.value == 'Search...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Search...';}" />
+<input class="searchbutton" type="button" value="Szukaj" />
+</form></div>
+
+{% endblock %}

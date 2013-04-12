@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Dodaj material{% endblock %}
+{% block title %}Dodaj proœbê o udostêpnienie materia³ów{% endblock %}
 {% block content %}
-<h1>Dodaj nowy material</h1>
+<h1>Dodaj proœbê o udostêpnienie materia³ów</h1>
 <p>Wype³nij ponizszy formularz </p>
 
 <form method="post" action="">
@@ -22,7 +22,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_date">Data:</label>
+<p><label for="id_date">Daty skrajne dla poszukiwanych materia³ów:</label>
 {{ form.date }}</p>
 
 <p>{% if form.description.errors %}
@@ -31,7 +31,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_description">Opis:</label></p>
+<p><label for="id_description">Opis materia³ów, których poszukujesz:</label></p>
 <p>{{ form.description }}</p>
 
 <p>{% if form.place.errors %}
@@ -40,7 +40,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_code">Miejsce</label></p>
+<p><label for="id_code">Miejsca dla poszukiwanych materia³ów:</label></p>
 <p>{{ form.place }}</p>
 
 <p>{% if form.tags.errors %}
@@ -50,7 +50,7 @@
 {% endif %}</p>
 
 
-<p><label for="id_tags">Tagi:</label>
+<p><label for="id_tags">Tagi dla proœby:</label>
 {{ form.tags }}</p>
 <p><input type="submit" value="Nadus tutaj!"></p>
 

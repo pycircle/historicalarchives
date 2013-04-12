@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Ogladnij material{% endblock %}
+{% block content %}
+<h1>Ogladnij material</h1>
+<h2>Tytu³: {{ material.title }}</h2>
+
+<p>Data: {{ material.date }}</p>
+
+<p>Miejsce: {{ material.place }}</p>
+
+<p>Opis: {{ material.description }}</p>
+
+<p>Twórca: {{ material.owner }}</p>
+
+<p>Data dodania: {{ material.date_of_creation }}</p>
+
+<p>Tagi: {{ material.tagi }}</p>
+
+<p>Ten material jest elementem nastêpuj¹cych kolekcji:
+{{ material:member_of_collections }}</p>
+
+{% endblock %}
