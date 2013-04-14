@@ -37,7 +37,7 @@ class Collection(models.Model):
     date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     materials_belonging = models.ManyToManyField(Material) # materialy ktore naleza do kolekcji
     def make_public(self):
-	'''zamienia kolekcje z prywatnej w publiczną'''
+        '''zamienia kolekcje z prywatnej w publiczną'''
         self.owner = ''
 
 class Request_for_materials(models.Model):
