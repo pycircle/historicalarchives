@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Ogladnij kolekcjê {% endblock %}
+{% block title %}Ogladnij kolekcj&#281 {% endblock %}
 {% block content %}
-<h1>Ogladnij kolekcjê</h1>
-<h2>Tytu³: {{ collection.title }}</h2>
+<h1>Ogl&#261dnij kolekcj&#281</h1>
+<h2>Tytu&#322: {{ collection.title }}</h2>
 
 
 <p>Opis: {{ collection.description }}</p>
 
-<p>W³aœciciel: {{ collection.owner }}</p>
+<p>W&#322a&#347ciciel: {{ collection.owner }}</p>
 
 <p>Twórca: {{ collection.founder }}</p>
 
@@ -16,7 +16,7 @@
 
 <p>Tagi: {{ collection.tagi }}</p>
 
-<p>Do tej   kolekcji nale¿¹ nastêpuj¹ce materia³y:
+<p>Do tej   kolekcji nale¿&#261 nast&#281puj&#261ce materia&#322y:
 </p>
 <ul>
 {% for collection in collection.materials_belonging %}

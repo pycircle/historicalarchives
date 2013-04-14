@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Dodaj proœbê o udostêpnienie materia³ów{% endblock %}
+{% block title %}Dodaj pro&#347b&#281 o udost&#281pnienie materia&#322ów{% endblock %}
 {% block content %}
-<h1>Dodaj proœbê o udostêpnienie materia³ów</h1>
-<p>Wype³nij ponizszy formularz </p>
+<h1>Dodaj pro&#347b&#281 o udost&#281pnienie materia&#322ów</h1>
+<p>Wype&#322nij poni&#380szy formularz </p>
 
 <form method="post" action="">
 
@@ -13,7 +13,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_title">Tytu³:</label>
+<p><label for="id_title">Tytu&#322:</label>
 {{ form.title }}</p>
 
 <p>{% if form.date.errors %}
@@ -22,7 +22,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_date">Daty skrajne dla poszukiwanych materia³ów:</label>
+<p><label for="id_date">Daty skrajne dla poszukiwanych materia&#322ów:</label>
 {{ form.date }}</p>
 
 <p>{% if form.description.errors %}
@@ -31,7 +31,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_description">Opis materia³ów, których poszukujesz:</label></p>
+<p><label for="id_description">Opis materia&#322ów, których poszukujesz:</label></p>
 <p>{{ form.description }}</p>
 
 <p>{% if form.place.errors %}
@@ -40,7 +40,7 @@
 </span>
 {% endif %}</p>
 
-<p><label for="id_code">Miejsca dla poszukiwanych materia³ów:</label></p>
+<p><label for="id_code">Miejsca dla poszukiwanych materia&#322ów:</label></p>
 <p>{{ form.place }}</p>
 
 <p>{% if form.tags.errors %}
@@ -50,7 +50,7 @@
 {% endif %}</p>
 
 
-<p><label for="id_tags">Tagi dla proœby:</label>
+<p><label for="id_tags">Tagi dla pro&#347by:</label>
 {{ form.tags }}</p>
 <p><input type="submit" value="Nadus tutaj!"></p>
 
