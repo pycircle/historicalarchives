@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+
 from django.db import models
-import datetime
 from django.contrib.auth.models import User
 #from tagging.fields import TagField
 from django.utils import timezone
@@ -24,7 +24,7 @@ class Material(models.Model):
         elif collection.owner == public or collection.owner == User:
             self.member_of_collections.append(collection)
             collection.materials_belonging.append(self)
-
+    
 class Collection(models.Model):
     '''klasa dla kolekcji'''
     #OWNER_CHOICES = ( #uzytkownik wybiera czy chce tworzyc kolekcje wlasna, czy publiczna
@@ -39,10 +39,12 @@ class Collection(models.Model):
     def make_public(self):
         '''zamienia kolekcje z prywatnej w publiczną'''
         self.owner = ''
-
+        
 class Request_for_materials(models.Model):
     '''Model dla prosby o udostepnienie materialow'''
     issuer = models.ForeignKey(User) #osoba ktora publikuje prosbe
     title = models.CharField(max_length = 150, unique = True)
     date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     description = models.TextField()#opis prosby o materiały podany przez uzytkownika
+    
+    
