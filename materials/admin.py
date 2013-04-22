@@ -1,6 +1,6 @@
 from django.contrib import admin
-from historicalarchives.materials.models import Material, Collection, Request_for_materials
+from materials.models import Material, Collection, Request_for_materials
 
-django.site.register(Material)
-django.site.register(Collection)
-django.site.register(Request_for_materials)
+admin.site.register(Material)
+admin.site.register(Collection)
+admin.site.register(Request_for_materials)
