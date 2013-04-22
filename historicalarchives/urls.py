@@ -5,9 +5,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'historicalarchives.views.home', name='home'),
-    # url(r'^historicalarchives/', include('historicalarchives.foo.urls')),
+    url(r'^actions/', include('actions.urls', namespace="actions")),
+    url(r'^materials/', include('materials.urls', namespace="materials")),
+    url(r'^other_tags/', include('other_tags.urls', namespace="other_tags")),
+    url(r'^profiles/', include('profiles.urls', namespace="profiles")),
+    url(r'^timeline/', include('timeline.urls', namespace="timeline")),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
