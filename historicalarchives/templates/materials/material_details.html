@@ -11,13 +11,13 @@
 
 <p>Opis: {{ material.description }}</p>
 
-<p>Twórca: {{ material.owner }}</p>
+<p>Tw&#243rca: {{ material.owner }}</p>
 
 <p>Data dodania: {{ material.date_of_creation }}</p>
 
 <p>Tagi: {{ material.tagi }}</p>
 
 <p>Ten material jest elementem nast&#281puj&#261cych kolekcji:
-{{ material:member_of_collections }}</p>
+{{ material.member_of_collections }}</p>
 
 {% endblock %}

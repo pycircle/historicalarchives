@@ -6,6 +6,6 @@ urlpatterns = patterns('materials.views',
         url(r'^details$', 'DetailsOfMaterials', name = 'details'),
         url(r'^add$', 'AddMaterial', name = 'add'),
         url(r'^request_add$', 'RequestMaterial', name = 'request_add'),
-        url(r'^requests$', 'ViewAllRequests', name = 'requsets'),
+        url(r'^requests$', 'ViewAllRequests', name = 'requests'),
         url(r'^request_details$', 'DetailsOfRequest', name = 'reqeust_detail'),
         )
