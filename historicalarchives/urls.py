@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, include, url
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', 'historicalarchives.views.Index', name = 'index'),
     url(r'^actions/', include('actions.urls', namespace="actions")),
     url(r'^materials/', include('materials.urls', namespace="materials")),
     url(r'^other_tags/', include('other_tags.urls', namespace="other_tags")),

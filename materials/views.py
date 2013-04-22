@@ -17,3 +17,12 @@ def ViewAllRequests(request):
 
 def DetailsOfRequest(request):
     return render_to_response("materials/request_details.html")
+
+def BuildCollection(request):
+    return render_to_response("materials/collection_build.html")
+
+def DetailsOfCollection(request):
+    return render_to_response("materials/collection_details.html")
+
+def ViewAllCollections(request):
+    return render_to_response("materials/collections.html")

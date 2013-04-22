@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Ogladnij kolekcj&#281 {% endblock %}
+{% block content %}
+<h1>Ogl&#261dnij kolekcj&#281</h1>
+<h2>Tytu&#322: {{ collection.title }}</h2>
+
+
+<p>Opis: {{ collection.description }}</p>
+
+<p>W&#322a&#347ciciel: {{ collection.owner }}</p>
+
+<p>Twórca: {{ collection.founder }}</p>
+
+<p>Data dodania: {{ collection.date_of_creation }}</p>
+
+<p>Tagi: {{ collection.tagi }}</p>
+
+<p>Do tej   kolekcji nale¿&#261 nast&#281puj&#261ce materia&#322y:
+</p>
+<ul>
+{% for collection in collection.materials_belonging %}
+<li>{{ collection }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+
