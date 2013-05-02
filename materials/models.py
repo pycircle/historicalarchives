@@ -11,7 +11,7 @@ class Material(models.Model):
     owner = models.ForeignKey(User) #wlascicielem jest uzytkownik,
     uploader = models.IPAddressField(null = True) #jesli material jest dodawany anonimowo, zapisujemy IP jako tworce
     title = models.CharField(max_length = 150, unique = True,)
-    date = models.DateTimeField(blank = True) # DateTimeField jest tymczasowe, poniewaz nie zawsze mozna podac pelna date, czasami tylko rok, albo nawet dekade, dlatego trzeba bedzie to jakos zastapic
+    date = models.DateField(blank = True) # DateTimeField jest tymczasowe, poniewaz nie zawsze mozna podac pelna date, czasami tylko rok, albo nawet dekade, dlatego trzeba bedzie to jakos zastapic
     #place = models.ForeignKey(Location)
     date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     #type_of_media = #rodzaj medium: audio, video, plik graficzny,
