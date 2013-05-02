@@ -1,0 +1,85 @@
+
+[
+  {
+   "model": "auth.user",
+   "pk": 1,
+   "fields": {
+     "username": "Hodor",
+     "email": "admin@pycircle.pl",
+     "password": "thenightisdarkandfullofterrors"
+    }
+  },
+  {
+   "model": "auth.user",
+   "pk": 2,
+   "fields":{
+     "username": "Cersei",
+     "email": "Cersei@pycircle.pl",
+     "password": "lannister"
+    }
+  },
+  {
+   "model": "materials.material",
+   "pk": 3,
+   "fields":{
+     "owner": 1,
+     "uploader": 1,
+     "title": "Widok na Stare Miasto z Cytadeli po wyzwoleniu",
+     "date": "1945-03-02",
+     "date_of_creation": "2013-05-02 20:12:17.996000+02:00",
+     "description": "Fotografia nieznanego autora wykonana w kilka dnia po wyzwoleniu Poznania przed wojska radzieckie.",
+     "path": "historicalarchives/poznan_1945.jpg"
+    }
+  },
+  {
+   "model": "materials.collection",
+   "pk": 4,
+   "fields":{
+     "founder": 2,
+     "title": "Dzieje Poznania",
+     "description": "Kolekcja tematyczna poswiecona dziejom Poznania",
+     "date_of_creation": "2013-05-02 20:17:17.996000+02:00",
+     "materials_belonging": [3]
+    }               
+  },
+  {
+   "model": "materials.material",
+   "pk": 5,
+   "fields":{
+     "owner": 2,
+     "uploader": 2,
+     "title": "Wilda po walkach",
+     "date": "1945-03-01",
+     "date_of_creation": "2013-05-02 20:15:17.996000+02:00",
+     "description": "Zniszczone budynki na Wildzie.",
+     "path": "historicalarchives/wilda_1945.jpg"
+    }
+  },
+  {
+   "model": "materials.request_for_materials",
+   "pk": 6,
+   "fields":{
+     "issuer": 2,
+     "title": "Poszukiwane zdjecia Poznania z wiosny roku 1945",
+     "description": "Poszukuje zdjec przedstawiajacych miasto i walki w nim prowadzone w roku 1945",
+     "date_of_creation": "2013-05-02 20:01:17.996000+02:00",
+     "materials_in_response": [3]
+    }
+  },
+  {
+   "model": "actions.action",
+   "pk": 7,
+   "fields":{
+     "title": "Poszukiwane zdjecia Poznania z wiosny roku 1945",
+     "slug": "Rocznica-wyzwolenia-Poznania",
+     "start_date": "2013-03-01 20:01:17.996000+02:00",
+     "expire_date": "2013-06-01 20:01:17.996000+02:00",
+     "description": "Akcja upamietniajaca 68 rocznice wyzwolenia Poznania",
+     "aim": "Zebranie nowych materialow prezentujacych przebieg walk i zniszczenia w miescie", 
+     "participants": [1,2],
+     "linked_collections": [4],
+     "materials_in_response": [5]
+    }
+  }
+
+]
