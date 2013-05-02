@@ -34,7 +34,7 @@ class Collection(models.Model):
     #owner =  models.ChoiceField(blank = True, choices = OWNER_CHOICES, default = User) #wlascicielem jest uzytkownik, albo jest to kolekcja publiczna, wtedy blank - puste pole, ale by default owner == this_user
     founder = models.ForeignKey(User) # tworca kolekcji musi byc uzytkownikiem, ale nie musi byc tozsamy z wlascicielem
     title = models.CharField(max_length = 150, unique=True)
-    date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
+    date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     materials_belonging = models.ManyToManyField(Material) # materialy ktore naleza do kolekcji
     def make_public(self):
         '''zamienia kolekcje z prywatnej w publiczną'''
