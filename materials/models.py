@@ -13,7 +13,7 @@ class Material(models.Model):
     title = models.CharField(max_length = 150, unique = True,)
     date = models.DateField(blank = True) # DateTimeField jest tymczasowe, poniewaz nie zawsze mozna podac pelna date, czasami tylko rok, albo nawet dekade, dlatego trzeba bedzie to jakos zastapic
     #place = models.ForeignKey(Location)
-    date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
+    date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     #type_of_media = #rodzaj medium: audio, video, plik graficzny,
     description = models.TextField()#opis materialu podany przez uzytkownika
     #tags = models.TagField()
