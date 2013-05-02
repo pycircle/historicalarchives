@@ -9,8 +9,8 @@ class Action(models.Model):
     '''klasa dla akcji. Na dzien 26 kwietnia 2013, nowe akcje moze uruchamiac tylko admin'''
     title = models.CharField(max_length = 150, unique = True,) # nazwa dla akcji
     slug = models.SlugField(unique=True)
-    start_date =  models.DateField(default=datetime.date.today()) # poczatek akcji
-    expire_date =  models.DateField() # koniec akcji
+    start_date =  models.DateTimeField(default=datetime.datetime.now()) # poczatek akcji
+    expire_date =  models.DateTimeField() # koniec akcji
     description = models.TextField()#opis akcji  
     aim =  models.TextField(blank = True)#cel akcji, nie musi, ale moze byc wyznaczony 
     participants = models.ManyToManyField(User)#osoby ktore zglosily sie do uczestnictwa w akcji
