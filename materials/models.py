@@ -44,7 +44,7 @@ class Request_for_materials(models.Model):
     '''Model dla prosby o udostepnienie materialow'''
     issuer = models.ForeignKey(User) #osoba ktora publikuje prosbe
     title = models.CharField(max_length = 150, unique = True)
-    date_of_creation =  models.DateField(default=datetime.date.today()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
+    date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     description = models.TextField()#opis prosby o materiały podany przez uzytkownika
     
     
