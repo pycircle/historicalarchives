@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Akcje{% endblock %}
+
+{% block content %}
+<h1>Obecnie....
+
+</h1>
+<p>
+Zakoczone akcje
+<ul>
+{% for act in actions %}
+<li>{{ act.title }}</li>
+{% endfor %}
+</ul>
+</p>
+{% endblock %}
