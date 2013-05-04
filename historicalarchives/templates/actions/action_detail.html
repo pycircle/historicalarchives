@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Akcja {{action.title}}{% endblock %}
+{% block content %}
+<h1>Akcja</h1>
+<h2>Tytu&#322: {{ action.title }}</h2>
+
+<p>Data rozpocz&#281cia: {{ action.start_date }}</p>
+
+<p>Data zakonczenia: {{ action.expire_date }}</p>
+
+<p>Opis: {{ action.description }}</p>
+
+<p>Cel: {{ material.owner }}</p>
+
+<p>Uczestnicy ackji: 
+{% for participant in action.participants %}
+<li><a href='/users/{{participants}}">{{ participant }}</a></li></p>
+
+<p>Kolekcje powi&#261zane z akcj&#261: 
+{% for collection in action.linked_collections %}
+<li><a href='/collections/{{collection}}">{{ collection }}</a></li></p>
+
+<p>Oto materia&#322y ktore powsta&#322y podczas akcji {{ action.title }}: 
+{% for material in action.materials_in_response %}
+<li><a href='/materials/{{material}}">{{ material }}</a></li></p>
+
+{% endblock %}
