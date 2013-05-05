@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Ogl&#261dnij materia&#322y{% endblock %}
+{% block content %}
+<h1>Ogl&#261dnij nowe materia&#322y</h1>
+{% for material in materials %}
+<h2>Tytu&#322: {{ material.title }}</h2>
+
+<p>Opis: {{ material.description|truncatewords:10}}</p>
+
+<p>Tw&#243rca: {{ material.owner }}</p>
+
+<p>Data dodania: {{ material.date_of_creation }}</p>
+
+<p>Tagi: {{ material.tagi }}</p>
+
+<p>Ten material jest elementem nast&#281puj&#261cych kolekcji:
+{{ material.member_of_collections }}</p>
+{% endfor %}
+{% endblock %}
