@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'other_tags',
     'profiles',
     'timeline',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
