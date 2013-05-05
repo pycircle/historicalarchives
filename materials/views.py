@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from materials.models import Material, Request_for_materials
+from materials.models import Material, Request_for_materials, Collection
 
 def SearchForMaterial(request):
     return render_to_response('materials/materials_search.html')
@@ -41,4 +41,4 @@ def DetailsOfCollection(request, pk):
 def ViewAllCollections(request):
     collections = Collection.objects.all()
     return render_to_response("materials/collections.html", {
-        "collections": collections}))
+        "collections": collections})
