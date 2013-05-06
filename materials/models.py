@@ -17,6 +17,7 @@ class Material(models.Model):
     #type_of_media = #rodzaj medium: audio, video, plik graficzny,
     description = models.TextField()#opis materialu podany przez uzytkownika
     #tags = models.TagField()
+    path = models.FilePathField()
 
     def add_to_collection(self, collection, user):
         if  collection.owner != public and collection.owner != User:
@@ -33,6 +34,7 @@ class Collection(models.Model):
     #)
     #owner =  models.ChoiceField(blank = True, choices = OWNER_CHOICES, default = User) #wlascicielem jest uzytkownik, albo jest to kolekcja publiczna, wtedy blank - puste pole, ale by default owner == this_user
     founder = models.ForeignKey(User) # tworca kolekcji musi byc uzytkownikiem, ale nie musi byc tozsamy z wlascicielem
+    description = models.TextField()#opis podany przez uzytkownika
     title = models.CharField(max_length = 150, unique=True)
     date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     materials_belonging = models.ManyToManyField(Material) # materialy ktore naleza do kolekcji
@@ -46,5 +48,5 @@ class Request_for_materials(models.Model):
     title = models.CharField(max_length = 150, unique = True)
     date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     description = models.TextField()#opis prosby o materiały podany przez uzytkownika
-    
+    materials_in_reponse = models.ManyToManyField(Material)# materialy powstale w odpowiedzi na request
     
