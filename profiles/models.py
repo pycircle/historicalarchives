@@ -1,8 +1,7 @@
 from django.db import models
 
 class User(models.Model):
-  """ Common user profile """
-	
+	""" Common user profile """	
     login = models.CharField(max_length = 25, unique = True)
     #password = 
     first_name = models.CharField(max_length = 30)
