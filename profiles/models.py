@@ -10,5 +10,5 @@ class User(models.Model):
     GENDER_CHOICES = (
     	('Male', 'M'),
     	('Female', 'F'))
-    gender = models.CharField(choices = GENDER_CHOICES)
+    gender = models.CharField(choices = GENDER_CHOICES, max_length = 6)
     mail = models.EmailField(max_length = 75, unique = True)

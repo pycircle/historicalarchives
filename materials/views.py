@@ -16,7 +16,7 @@ def AddMaterial(request):
 def ViewNewMaterials(request):
     materials = Material.objects.all().order_by('date_of_creation')[:10]
     return render_to_response("materials/view_new_materials.html", {
-        "materials": materials})
+        "materials": materials}, context_instance=RequestContext(request))
 
 def RequestMaterial(request):
     return render_to_response("materials/request_issue_new.html", context_instance=RequestContext(request))
