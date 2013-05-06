@@ -1,112 +1,42 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl-PL">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 	<title> {% block title %}{% endblock %}</title>
-	<style type="text/css">
-	body {
-	background-color: #aaa;
-	font: 13px/16px arial, verdana, sans-serif;
-	text-align: center;
-	color: #ccc;
-	margin: 20px auto;
-	padding: 0;
-	}
-	}
-	ul {
-	padding:0;
-	margin:0;
-	list-style:none;
-	}
-	li {
-	color: #222;
-	margin-bottom: 8px;
-	}
+    
+    <style type="text/css">
 	
-	h1 {
-	padding-top: 10px;
-	padding-left: 10px;
-	margin-top:  1.75em;
-	margin-bottom:  1.25em;
-	}
-	fieldset{
-	width: 216px;
-	border: none;
-	background-color: #ddd
-	}
-		#mainNav a{
-		color:#fff;
-		position:relative;
-		display:inline-block;
-		padding:0.278em;
-		text-decoration:none;
-		font-size:1.214em;
-		line-height:2.35em;
-		background:#2d3239;
-		font-weight:bold;
-		-moz-box-shadow:   	inset 0 0px 3px rgba(0,0,0,0.75);
-		-webkit-box-shadow: inset 0 0px 3px rgba(0,0,0,0.75);
-		box-shadow:         inset 0 0px 3px rgba(0,0,0,0.75);
-		-webkit-border-radius: 1.47em;
-		-moz-border-radius: 1.47em;
-		border-radius: 1.47em;
-	}
-	#mainNav{text-align:center;}
-	#mainNav li{
-		display:inline-block;
-		margin:0 7px;
-	}
-		#mainNav a span{
-		color:#fff;
-		text-decoration:none;
-		padding:0 1.25em;
-		display:block;
-		text-shadow: 0px 0 rgba(0,0,0,0.31), 0 1px rgba(0,0,0,0.5), 0px 0 rgba(0,0,0,0.5), 0 0px rgba(0,0,0,0.5);
-		
-		border:1px solid #202329;
-		background:#606a78;
+</style>
 
-		background-image: linear-gradient(bottom, rgb(65,72,82) 0%, rgb(96,106,120) 100%);
-		background-image: -o-linear-gradient(bottom, rgb(65,72,82) 0%, rgb(96,106,120) 100%);
-		background-image: -moz-linear-gradient(bottom, rgb(65,72,82) 0%, rgb(96,106,120) 100%);
-		background-image: -webkit-linear-gradient(bottom, rgb(65,72,82) 0%, rgb(96,106,120) 100%);
-		background-image: -ms-linear-gradient(bottom, rgb(65,72,82) 0%, rgb(96,106,120) 100%);
-
-		background-image: -webkit-gradient(
-			linear,
-			left bottom,
-			left top,
-			color-stop(0, rgb(65,72,82)),
-			color-stop(1, rgb(96,106,120))
-		);
-		
-		-moz-box-shadow:   	inset 0 2px 2px -2px rgba(255,255,255,255.75),
-							inset 0 0 0 #fff;
-		-webkit-box-shadow: inset 0 2px 2px -2px rgba(255,255,255,0.75),
-							inset 0 0 0 #fff;
-		box-shadow:         inset 0 2px 2px -2px rgba(255,255,255,0.75),
-							inset 0 0 0 #fff;
-							
-		-webkit-border-radius: 1.25em;
-		-moz-border-radius: 1.25em;
-		border-radius: 1.25em;
-	}
-	</style>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+    <script src="{{ STATIC_URL}}js/jquery-1.9.1.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav id ="mainNav">
-   <ul>
-       <li><a href = "{% url index %}"><span>Strona g&#322&#243wna </span></a></li>
-       <li><a href = "{% url materials:details %}"><span> Nowe materia&#322y</span></a></li>
-       <li><a href = "{% url materials:collections %}"><span> Nowe kolekcje</span></a></li>
-       <li><a href = "{% url materials:search %}"><span> Szukaj</span></a></li>
-       <li><a href = "{% url materials:requests %}"> <span>Pro&#347by o materia&#322y </span></a></li>
-       <li><a href = "{% url profiles:view %}"><span>Twoje konto</span></a></li>
-   </ul>
-
-   </nav>
-{% block content %}{% endblock %}
+    <div class="row-fluid">
+        <div class="span2">
+            <p>miejsce na logo</p>
+        </div>
+        <div class="navbar navbar-inverse span7 offset3">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a class="" href = "{% url index %}">Strona g&#322&#243wna</a></li>
+                    <li><a href="{% url materials:details %}">Nowe materia&#322y</a></li>
+                    <li><a href="{% url materials:collections %}">Nowe kolekcje</a></li>
+                    <li><a href="{% url materials:search %}">Szukaj</a></li>
+                    <li><a href="{% url materials:requests %}">Pro&#347by o materia&#322y</a></li>
+                    <li><a href="{% url profiles:view %}">Twoje konto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+        <hr>
+        <footer>Creative Commons / LGPL / inna wolna licencja</footer>
+    </div>
 </body>
-
 </html>
