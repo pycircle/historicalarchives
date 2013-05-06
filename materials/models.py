@@ -48,5 +48,5 @@ class Request_for_materials(models.Model):
     title = models.CharField(max_length = 150, unique = True)
     date_of_creation =  models.DateTimeField(default=datetime.datetime.now()) #data powstania materialu czyli 'teraz' wypelniana automatycznie
     description = models.TextField()#opis prosby o materiały podany przez uzytkownika
-    materials_in_reponse = models.ManyToManyField(Material)# materialy powstale w odpowiedzi na request
+    materials_in_response = models.ManyToManyField(Material)# materialy powstale w odpowiedzi na request
     
