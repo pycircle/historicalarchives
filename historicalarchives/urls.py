@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     url(r'^$', 'historicalarchives.views.Index', name = 'index'),
     url(r'^actions/', include('actions.urls', namespace="actions")),
     url(r'^materials/', include('materials.urls', namespace="materials")),
-    url(r'^other_tags/', include('other_tags.urls', namespace="other_tags")),
     url(r'^profiles/', include('profiles.urls', namespace="profiles")),
     url(r'^timeline/', include('timeline.urls', namespace="timeline")),
 
