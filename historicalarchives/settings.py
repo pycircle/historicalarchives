@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     'timeline',
     #OTHERS
     'south',
-    'social-auth',
+    'social_auth',
     'timelinejs',
 )
 
